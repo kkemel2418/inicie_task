@@ -1,0 +1,40 @@
+<mat-toolbar color="primary">
+  Gerenciamento de Tarefas
+</mat-toolbar>
+
+<div>
+  <!-- Formulário para adicionar nova tarefa -->
+  <mat-card class="task-card">
+    <mat-form-field appearance="fill">
+      <input #newTaskTitle matInput placeholder="Digite o título da tarefa" required>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" [disabled]="!newTaskTitle.value.trim()" (click)="addTask(newTaskTitle.value)">
+      Adicionar
+    </button>
+  </mat-card>
+
+  <!-- Lista de tarefas -->
+  <div *ngFor="let task of tasks" class="task-content">
+    <mat-card class="task-card">
+      <mat-list>
+        <mat-list-item>
+          
+          <div mat-line>{{ task.title }}</div>
+          <div mat-line>Status: {{ task.status }}</div>
+
+          <!-- Botão para alterar o status da tarefa -->
+          <button mat-button color="accent" (click)="updateTaskStatus(task.id!, task.status)">
+            {{ task.status === 'pendente' ? 'Concluir' : 'Reverter' }}
+          </button>
+          
+
+          <!-- Botão para excluir a tarefa -->
+          <button mat-button color="warn" [disabled]="!task.id" (click)="deleteTask(task.id)">
+            Excluir
+          </button>
+        </mat-list-item>
+      </mat-list>
+    </mat-card>
+  </div>
+</div>

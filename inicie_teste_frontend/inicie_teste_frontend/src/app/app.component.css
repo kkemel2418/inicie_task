@@ -1,0 +1,183 @@
+/* Estilo para o toolbar */
+mat-toolbar {
+    padding: 16px;
+    font-size: 24px;
+    text-align: center;
+    background-color: #4caf50; /* Cor mais suave */
+    color: white;
+    border-radius: 8px;
+}
+
+/* Estilo para os cards de tarefa */
+.task-card {
+    margin: 16px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    height: auto;
+    max-height: 380px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Adicionado para evitar overflow */
+}
+
+/* Efeito de hover para o card */
+.task-card:hover {
+    transform: translateY(-5px); /* Efeito hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para o conteúdo da tarefa */
+.task-content {
+    flex-grow: 1;
+    overflow: hidden;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Estilo para a lista de tarefas */
+mat-list {
+    margin-top: 20px;
+}
+
+
+.mat-mdc-list-base {
+    --mdc-list-list-item-one-line-container-height: 110px; /* Ajuste o valor conforme necessário */
+}
+
+/* Estilo para cada item da lista de tarefas */
+mat-list-item {
+    display: flex;
+    height: 110px; /* Altura fixa para os itens */
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #ffffff;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 16px;
+}
+
+/* Efeito de hover para o item da lista */
+mat-list-item:hover {
+    background-color: #e8f5e9; /* Efeito hover para destacar item */
+    transform: translateY(-2px);
+}
+
+/* Ícone do item da lista */
+mat-list-item mat-icon {
+    margin-right: 12px;
+    font-size: 24px;
+    color: #4caf50; /* Cor do ícone */
+}
+
+/* Estilo para os botões de status e exclusão */
+mat-list-item button {
+    margin-left: 12px;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-bottom: 10px; /* Ajustando o espaçamento inferior para visibilidade */
+}
+
+/* Estilo para o botão de concluir/reverter */
+mat-list-item button.mat-button.color-accent {
+    background-color: #8bc34a;
+    color: white;
+}
+
+mat-list-item button.mat-button.color-accent:hover {
+    background-color: #66bb6a;
+    transform: scale(1.05);
+}
+
+/* Estilo para o botão de exclusão */
+mat-list-item button.mat-button.color-warn {
+    background-color: #f44336;
+    color: white;
+}
+
+mat-list-item button.mat-button.color-warn:hover {
+    background-color: #e53935;
+    transform: scale(1.05);
+}
+
+/* Estilo para o campo de entrada de texto */
+mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+}
+
+/* Estilo do botão de adicionar tarefa */
+button.mat-raised-button {
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #4caf50;
+    color: white;
+    border-radius: 50px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+button.mat-raised-button:hover {
+    background-color: #388e3c;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 600px) {
+    .task-card {
+        padding: 16px;
+        margin: 8px; /* Ajustando margem para telas menores */
+    }
+
+    mat-list-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px; /* Ajustando o padding para facilitar a visualização */
+    }
+
+    mat-list-item button {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%; /* Garantindo que os botões ocupem toda a largura disponível */
+    }
+
+    button.mat-raised-button {
+        width: 100%; /* Garantindo que o botão de adicionar ocupe toda a largura disponível */
+    }
+
+    .task-content {
+        font-size: 14px; /* Reduzindo o tamanho da fonte para dispositivos menores */
+    }
+}
+
+/* Estilos para os botões da Material Design Components (MDC) */
+button.mat-mdc-button {
+    background-color: #4caf50; /* Cor de fundo temporária */
+    color: white; /* Cor do texto */
+    border-radius: 4px;
+}
+
+button.mat-mdc-button.mat-warn {
+    background-color: #f44336; /* Cor de fundo para o botão de exclusão */
+    color: white;
+}
+
+button.mat-mdc-button.mat-accent {
+    background-color: #8bc34a; /* Cor de fundo para o botão de reverter */
+    color: white;
+}
